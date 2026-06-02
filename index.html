@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrip | Simulador de Impacto Ambiental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>🌿 EcoTrip</h1>
+            <p>Simulador de Impacto Ambiental para Viagens</p>
+            <span>Descubra a pegada de carbono da sua próxima aventura e aprenda como reduzi-la.</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="calculator-card">
+            <h2>Calcule sua Pegada de Carbono</h2>
+            <form id="eco-form">
+                <div class="form-group">
+                    <label for="origin">Origem</label>
+                    <input type="text" id="origin" placeholder="Ex: São Paulo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="destination">Destino</label>
+                    <input type="text" id="destination" placeholder="Ex: Rio de Janeiro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="transport">Meio de Transporte</label>
+                    <select id="transport" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="plane">✈️ Avião</option>
+                        <option value="car">🚗 Carro</option>
+                        <option value="bus">🚌 Ônibus</option>
+                        <option value="train">🚆 Trem</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="passengers">Número de Passageiros</label>
+                    <input type="number" id="passengers" min="1" value="1" required>
+                </div>
+
+                <button type="submit" class="btn-calculate">Simular Impacto</button>
+            </form>
+        </section>
+
+        <section id="result-section" class="result-card hidden">
+            <h3>Resultado da Simulação</h3>
+            <div class="result-content">
+                <div class="emission-box">
+                    <span class="emission-value" id="co2-result">0</span>
+                    <span class="emission-unit">kg de CO₂</span>
+                </div>
+                <p id="route-summary" class="route-summary"></p>
+                <div class="eco-tip">
+                    <strong>💡 Dica EcoTrip:</strong> <span id="tip-text"></span>
+                </div>
+                <button id="reset-btn" class="btn-secondary">Nova Simulação</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EcoTrip. Projeto mockado para fins demonstrativos.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
